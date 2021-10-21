@@ -135,6 +135,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        missingDimensionStrategy 'react-native-camera', 'general' // <--- insert this line
+        multiDexEnabled true
 
         // Detox
         testBuildType System.getProperty('testBuildType', 'debug')  // This will later be used to control the test apk build type

@@ -1,46 +1,88 @@
-import { StackNavigationProp } from "@react-navigation/stack"
-import React from "react"
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text
-} from "react-native"
-import { RootStackParamsList } from "../navigation/Navigator"
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { RNCamera } from 'react-native-camera';
+import { useCamera } from 'react-native-camera-hooks';
+ 
+const PendingView = () => (
+  <View
+    style={{
+      flex: 1,
+      backgroundColor: 'lightgreen',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}
+  >
+    <Text>Waiting</Text>
+  </View>
+);
 
-interface Props {
-  navigation: StackNavigationProp<RootStackParamsList, "Home">
-}
 
-const Home = ({ }: Props) => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Click picture</Text>
+const Home =()=>{    
+
+  const takePicture = async function(camera:any) {
+    const options = { quality: 0.5, base64: true };
+    const data = await camera.takePictureAsync(options);
+    //  eslint-disable-next-line
+    console.log(data.uri);
+  };
+    return (
+      <View style={styles.container}>
+        <RNCamera
+          style={styles.preview}
+          type={RNCamera.Constants.Type.back}
+          flashMode={RNCamera.Constants.FlashMode.on}
+          androidCameraPermissionOptions={{
+            title: 'Permission to use camera',
+            message: 'We need your permission to use your camera',
+            buttonPositive: 'Ok',
+            buttonNegative: 'Cancel',
+          }}
+          androidRecordAudioPermissionOptions={{
+            title: 'Permission to use audio recording',
+            message: 'We need your permission to use your audio',
+            buttonPositive: 'Ok',
+            buttonNegative: 'Cancel',
+          }}
+        >
+          {({ camera, status, recordAudioPermissionStatus }) => {
+            if (status !== 'READY') return <PendingView />;
+            return (
+              <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+                <TouchableOpacity onPress={() =>  takePicture(camera)} style={styles.capture}>
+                  <Text style={{ fontSize: 20,color:'white',fontWeight:'bold' }}> Take Picture</Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
+        </RNCamera>
       </View>
+    );
+  
 
-    </SafeAreaView>
-  )
+  
 }
-
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: "center", backgroundColor: "white" },
-  innerContainer: { marginHorizontal: 12 },
-  scrollView: {
-    flexGrow: 1,
-    padding: 16,
-    marginBottom: 16,
-    backgroundColor: "#e9e9e9",
-  },
-  pingPong: {
-    flexDirection: "row",
+  container: {
     flex: 1,
+    flexDirection: 'column',
+    backgroundColor: 'black',
   },
-  header: {
-    alignSelf: "flex-start",
-    fontSize: 20,
+  preview: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
-})
+  capture: {
+    flex: 0,
+    backgroundColor: 'blue',
+    borderRadius: 5,
+    padding: 15,
+    paddingHorizontal: 20,
+    alignSelf: 'center',
+    margin: 20,
+  },
+});
 
-export default Home
+ export default Home
+ 
