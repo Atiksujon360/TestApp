@@ -7,9 +7,8 @@ import {
   View,
 } from "react-native";
 import { RNCamera } from "react-native-camera";
-import { useNavigation } from '@react-navigation/native';
-import ImagePreview from "./ImagePreview"; 
-
+import { useNavigation } from "@react-navigation/native";
+import ImagePreview from "./ImagePreview";
 
 const PendingView = () => (
   <View
@@ -31,19 +30,16 @@ const Home = () => {
     const data = await camera.takePictureAsync(options);
     //  eslint-disable-next-line
     console.log(data.uri);
-    const source=data.uri;
+    const source = data.uri;
     // console.log( ' Image Date',source);
-    
-    navigation.navigate('ImagePreview', {
-      imgData: source
-      
-    });
 
-    
+    navigation.navigate("ImagePreview", {
+      imgData: source,
+    });
   };
   return (
     <View style={styles.container}>
-      <RNCamera 
+      <RNCamera
         style={styles.preview}
         type={RNCamera.Constants.Type.back}
         flashMode={RNCamera.Constants.FlashMode.on}
