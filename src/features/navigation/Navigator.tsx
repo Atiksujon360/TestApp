@@ -8,10 +8,14 @@ import {
 } from "../../services/navigation/navigationService"
 import Home from "../home/Home"
 import Landing from "../landing/Landing"
+import ImagePreview from "../home/ImagePreview"
+
 
 export type RootStackParamsList = {
   Home: undefined
   Landing: undefined
+  ImagePreview:undefined
+  
 }
 
 const Stack = createStackNavigator<RootStackParamsList>()
@@ -32,7 +36,8 @@ function Navigator() {
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator initialRouteName="Landing">
         <Stack.Screen name="Landing" component={Landing} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Home} />  
+        <Stack.Screen name="ImagePreview" component={ImagePreview} />  
       </Stack.Navigator>
     </NavigationContainer>
   )
