@@ -9,12 +9,15 @@ import {
 import Home from "../home/Home"
 import Landing from "../landing/Landing"
 import ImagePreview from "../home/ImagePreview"
+import PreviewPage from "../home/PreviewPage"
+
 
 
 export type RootStackParamsList = {
   Home: undefined
   Landing: undefined
   ImagePreview:undefined
+  PreviewPage:undefined
   
 }
 
@@ -37,7 +40,8 @@ function Navigator() {
       <Stack.Navigator initialRouteName="Landing">
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Home" component={Home} />  
-        <Stack.Screen name="ImagePreview" component={ImagePreview} />  
+        <Stack.Screen name="ImagePreview" component={ImagePreview} /> 
+        <Stack.Screen name='PreviewPage' component={PreviewPage} /> 
       </Stack.Navigator>
     </NavigationContainer>
   )

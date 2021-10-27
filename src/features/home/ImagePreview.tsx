@@ -24,7 +24,7 @@ const ImagePreview = ({
     setIsLoading(true);
     requestAnimationFrame(() => {
       setTimeout(() => {
-        navigation.navigate("Landing");
+        navigation.navigate("PreviewPage");
         setIsLoading(true);
         setsavePhoto(true);
       }, 1000);
