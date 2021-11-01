@@ -7,8 +7,7 @@ import {
   View,
 } from "react-native";
 import { RNCamera } from "react-native-camera";
-import { useNavigation } from "@react-navigation/native";
-import ImagePreview from "./ImagePreview";
+import { useNavigation } from "@react-navigation/native"; 
 
 const PendingView = () => (
   <View

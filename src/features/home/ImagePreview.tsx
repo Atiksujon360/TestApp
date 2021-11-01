@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   TouchableOpacity,
   View,
@@ -24,7 +24,7 @@ const ImagePreview = ({
     setIsLoading(true);
     requestAnimationFrame(() => {
       setTimeout(() => {
-        navigation.navigate("PreviewPage");
+        navigation.navigate("PreviewPage",{imgData});
         setIsLoading(true);
         setsavePhoto(true);
       }, 1000);
