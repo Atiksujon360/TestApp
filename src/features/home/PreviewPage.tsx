@@ -11,9 +11,6 @@ const PreviewPage = ({
   route: any;
 }) => {
   const { imgData } = route.params;
-  // console.log("ImgData", imgData);
-
-  //nevigation to landing page
   const goBack = () => {
     navigation.navigate("Landing");
   };
@@ -47,7 +44,6 @@ const PreviewPage = ({
   }
 
   const [details, setDetails] = useState<Details>();
-
   //COnversion of japg to base64
 
   useEffect(() => {
@@ -81,12 +77,12 @@ const PreviewPage = ({
           console.error(error);
         });
     });
-  }, [1000]);
+  }, [setDetails]);
 
   const First_name =
     details?.result[0].ListVerifiedFields.pFieldMaps[9].Field_Visual;
   const nationality =
-    details?.result[0].ListVerifiedFields.pFieldMaps[11].Field_Visual;   
+    details?.result[0].ListVerifiedFields.pFieldMaps[11].Field_Visual;
   const documentType = details?.documentType;
 
   return (

@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import LottieView from "lottie-react-native";
 
 const ImagePreview = ({
   route,
@@ -17,17 +18,15 @@ const ImagePreview = ({
 }) => {
   const { imgData } = route.params;
 
-  const [savePhoto, setsavePhoto] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleConfirm = () => {
     setIsLoading(true);
     requestAnimationFrame(() => {
       setTimeout(() => {
-        navigation.navigate("PreviewPage",{imgData});
-        setIsLoading(true);
-        setsavePhoto(true);
-      }, 1000);
+        navigation.navigate("PreviewPage", { imgData });
+        setIsLoading(false);
+      }, 2000);
     });
   };
   const handleRetake = () => {
@@ -96,6 +95,28 @@ const ImagePreview = ({
           </TouchableOpacity>
         </View>
       </View>
+      {isLoading ? (
+        <View
+          style={{
+            backgroundColor: "black",
+            position: "absolute",
+            opacity: 0.6,
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <LottieView
+            style={{ height: 200 }}
+            source={require("../../../assets/animations/scanner.json")}
+            autoPlay
+            speed={3}
+          />
+        </View>
+      ) : (
+        <></>
+      )}
     </View>
   );
 };
