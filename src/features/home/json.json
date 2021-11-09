@@ -1,0 +1,238 @@
+{
+  "status": "success",
+  "message": "",
+  "images": [
+    {
+      "Base64ImageString": "  ",
+      "Format": ".jpg",
+      "LightIndex": 6,
+      "PageIndex": 0
+    }
+  ],
+  "result": [
+    {
+      "ListVerifiedFields": {
+        "pFieldMaps": [
+          {
+            "wLCID": 0,
+            "FieldType": 0,
+            "wFieldType": 0,
+            "Field_MRZ": "P",
+            "Field_Visual": "P",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 1,
+            "wFieldType": 1,
+            "Field_MRZ": "BGD",
+            "Field_Visual": "BGD",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 2,
+            "wFieldType": 2,
+            "Field_MRZ": "BJ0393093",
+            "Field_Visual": "BJ0393093",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 3,
+            "wFieldType": 3,
+            "Field_MRZ": "11/28/2020",
+            "Field_Visual": "11/28/2020",
+            "Matrix": [2, 0, 2, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 4,
+            "wFieldType": 4,
+            "Field_MRZ": null,
+            "Field_Visual": "11/29/2015",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 5,
+            "wFieldType": 5,
+            "Field_MRZ": "3/5/1991",
+            "Field_Visual": "3/5/1991",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 6,
+            "wFieldType": 6,
+            "Field_MRZ": null,
+            "Field_Visual": "COMILLA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 7,
+            "wFieldType": 7,
+            "Field_MRZ": null,
+            "Field_Visual": "19911916768020753",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 8,
+            "wFieldType": 8,
+            "Field_MRZ": "AHMMED",
+            "Field_Visual": "AHMMED",
+            "Matrix": [0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 9,
+            "wFieldType": 9,
+            "Field_MRZ": "KAWSAR",
+            "Field_Visual": "KAWSAR",
+            "Matrix": [0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 11,
+            "wFieldType": 11,
+            "Field_MRZ": null,
+            "Field_Visual": "BANGLADESHI",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 12,
+            "wFieldType": 12,
+            "Field_MRZ": "M",
+            "Field_Visual": "M",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 24,
+            "wFieldType": 24,
+            "Field_MRZ": null,
+            "Field_Visual": "DIP / DHAKA",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 25,
+            "wFieldType": 25,
+            "Field_MRZ": "AHMMED KAWSAR",
+            "Field_Visual": "AHMMED KAWSAR",
+            "Matrix": [0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 26,
+            "wFieldType": 26,
+            "Field_MRZ": "BGD",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 35,
+            "wFieldType": 35,
+            "Field_MRZ": "ID-3",
+            "Field_Visual": null,
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 38,
+            "wFieldType": 38,
+            "Field_MRZ": "Bangladesh",
+            "Field_Visual": "Bangladesh",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 51,
+            "wFieldType": 51,
+            "Field_MRZ": "P<BGDAHMMED<<KAWSAR<<<<<<<<<<<<<<<<<<<<<<<<<^BJ03930935BGD9103052M2011286<<<<<<<<<<<<<<08",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 80,
+            "wFieldType": 80,
+            "Field_MRZ": "5",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 81,
+            "wFieldType": 81,
+            "Field_MRZ": "2",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 82,
+            "wFieldType": 82,
+            "Field_MRZ": "6",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 84,
+            "wFieldType": 84,
+            "Field_MRZ": "8",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 185,
+            "wFieldType": 185,
+            "Field_MRZ": "30",
+            "Field_Visual": "30",
+            "Matrix": [1, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 195,
+            "wFieldType": 195,
+            "Field_MRZ": "0",
+            "Field_Visual": null,
+            "Matrix": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 364,
+            "wFieldType": 364,
+            "Field_MRZ": "0",
+            "Field_Visual": "0",
+            "Matrix": [2, 0, 2, 0, 0, 3, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 522,
+            "wFieldType": 522,
+            "Field_MRZ": null,
+            "Field_Visual": "24",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          },
+          {
+            "wLCID": 0,
+            "FieldType": 523,
+            "wFieldType": 523,
+            "Field_MRZ": null,
+            "Field_Visual": "5",
+            "Matrix": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          }
+        ]
+      }
+    }
+  ],
+  "faceImages": " ",
+  "documentType": "Bangladesh - Passport (2013)"
+}
