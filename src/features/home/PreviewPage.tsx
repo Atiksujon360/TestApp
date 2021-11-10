@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
+import { Button, Card } from "react-native-paper";
 import RNFS from "react-native-fs";
+import LottieView from "lottie-react-native";
 
 const PreviewPage = ({
   navigation,
@@ -44,6 +45,8 @@ const PreviewPage = ({
   }
 
   const [details, setDetails] = useState<Details>();
+  const [isLoading, setIsLoading] = useState(false);
+
   //COnversion of japg to base64
 
   useEffect(() => {
@@ -64,6 +67,7 @@ const PreviewPage = ({
           docTypeEnabled: true,
         }),
       };
+      setIsLoading(true);
       fetch("https://okayiddemo.innov8tif.com/okayid/api/v3/ocr", requestPost)
         .then((res) => res.json())
         .then((res) => {
@@ -72,6 +76,7 @@ const PreviewPage = ({
             "Response Body -> " + JSON.stringify(res)
           );
           setDetails(res);
+          setIsLoading(false);
         })
         .catch((error) => {
           console.error(error);
@@ -87,31 +92,68 @@ const PreviewPage = ({
 
   return (
     <View style={styles.container}>
-      <View>
-        <Card>
-          <Card.Cover
-            source={{
-              uri: imgData,
-            }}
+      {isLoading ? (
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: "white",
+            opacity: 2,
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "100%",
+            position: "absolute",
+          }}
+        >
+          <LottieView
+            style={{ height: "100%", width: "100%" }}
+            source={require("../../../assets/animations/scanner.json")}
+            autoPlay
+            speed={2}
           />
-          <Card.Content style={styles.content}>
-            <Text style={styles.fonstyle}>Name: </Text>
-            <Text>{First_name}</Text>
-          </Card.Content>
-          <Card.Content style={styles.content}>
-            <Text style={styles.fonstyle}>Nationality: </Text>
-            <Text>{nationality}</Text>
-          </Card.Content>
-          <Card.Content style={styles.content}>
-            <Text style={styles.fonstyle}>Document Type: </Text>
-            <Text> {documentType}</Text>
-          </Card.Content>
-        </Card>
-      </View>
+          <Text
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              position: "absolute",
+              fontSize:15,
+              fontWeight:'bold',
+              color:'white',
+              fontStyle:'italic'
+            }}
+          >
+            Loading Info...
+          </Text>
+        </View>
+      ) : (
+        <>
+          <View>
+            <Card>
+              <Card.Cover
+                source={{
+                  uri: imgData,
+                }}
+              />
+              <Card.Content style={styles.content}>
+                <Text style={styles.fonstyle}>Name: </Text>
+                <Text>{First_name}</Text>
+              </Card.Content>
+              <Card.Content style={styles.content}>
+                <Text style={styles.fonstyle}>Nationality: </Text>
+                <Text>{nationality}</Text>
+              </Card.Content>
+              <Card.Content style={styles.content}>
+                <Text style={styles.fonstyle}>Document Type: </Text>
+                <Text> {documentType}</Text>
+              </Card.Content>
+            </Card>
+          </View>
 
-      <View>
-        <Button onPress={goBack}> Go Back Landing Page</Button>
-      </View>
+          <View>
+            <Button onPress={goBack}> Go Back Landing Page</Button>
+          </View>
+        </>
+      )}
     </View>
   );
 };
