@@ -23,7 +23,7 @@ interface Props {
 }
 
 const Landing = ({ navigation }: Props) => {
-  const goHome = () => navigation.navigate("Home")
+  const goHome = () => navigation.navigate('Home')
 
   return (
     <View style={styles.body}>

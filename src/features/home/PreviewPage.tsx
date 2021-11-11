@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Alert, Modal } from "react-native";
 import { Button, Card } from "react-native-paper";
 import RNFS from "react-native-fs";
 import LottieView from "lottie-react-native";
+import { useNetInfo } from "@react-native-community/netinfo";
 
 const PreviewPage = ({
   navigation,
@@ -46,6 +47,7 @@ const PreviewPage = ({
 
   const [details, setDetails] = useState<Details>();
   const [isLoading, setIsLoading] = useState(false);
+  const netInfo = useNetInfo();
 
   //COnversion of japg to base64
 
@@ -79,10 +81,10 @@ const PreviewPage = ({
           setIsLoading(false);
         })
         .catch((error) => {
-          console.error(error);
+          console.warn(error);
         });
     });
-  }, [setDetails]);
+  }, [imgData, setDetails]);
 
   const First_name =
     details?.result[0].ListVerifiedFields.pFieldMaps[9].Field_Visual;
@@ -116,10 +118,10 @@ const PreviewPage = ({
               justifyContent: "center",
               alignItems: "center",
               position: "absolute",
-              fontSize:15,
-              fontWeight:'bold',
-              color:'white',
-              fontStyle:'italic'
+              fontSize: 15,
+              fontWeight: "bold",
+              color: "white",
+              fontStyle: "italic",
             }}
           >
             Loading Info...
@@ -128,6 +130,7 @@ const PreviewPage = ({
       ) : (
         <>
           <View>
+            {Alert.alert("Internet connection:", netInfo.type)}
             <Card>
               <Card.Cover
                 source={{

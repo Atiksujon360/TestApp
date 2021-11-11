@@ -31,6 +31,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/netinfo": "^6.1.0",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "@reduxjs/toolkit": "^1.4.0",
@@ -48,7 +49,9 @@
     "react-native-fast-image": "^8.3.2",
     "react-native-fs": "^2.18.0",
     "react-native-gesture-handler": "^1.7.0",
+    "react-native-modal": "^13.0.0",
     "react-native-paper": "^4.9.2",
+    "react-native-popup-dialog": "^0.18.3",
     "react-native-reanimated": "^1.12.0",
     "react-native-redash": "^14.2.3",
     "react-native-safe-area-context": "^3.1.4",
